@@ -1,3 +1,6 @@
+:root{
+  --color-white-smoke:#eee;
+}
 *,
 *::after,
 *::before {
@@ -30,10 +33,12 @@ html {
 .flex-item {
   padding: 1rem 3rem;
   font-size: 4rem;
-  background-color: #eee;
+  background-color: var(--color-white-smoke);
   margin: 0.5rem;
 }
 
 .item-2 {
   flex-grow: 1;
 }
+
+.item-3{flex-grow:2;}
