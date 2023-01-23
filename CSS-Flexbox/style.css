@@ -9,3 +9,31 @@
 html {
   box-sizing: border-box;
 }
+
+.flex-container {
+  background-color: rgba(0, 0, 256, 0.9);
+  min-height: 15rem;
+  display: flex;
+  /* Sets the direction in which the container want to stack the flex item
+  Column means one on top of another 
+  flex-direction: column; For this first example i'll leave it to the default value:row*/
+  /* This property specifies that the flex items should wrap if there is no 
+  more space */
+  /* flex-flow is the shorthand for flex-direction and flex-wrap */
+  flex-wrap: wrap;
+  /* This property is used to set items' allignment on the x axis */
+  justify-content: center;
+  /* This one is used to allign items on the y axis */
+  align-items: center;
+}
+
+.flex-item {
+  padding: 1rem 3rem;
+  font-size: 4rem;
+  background-color: #eee;
+  margin: 0.5rem;
+}
+
+.item-2 {
+  flex-grow: 1;
+}
