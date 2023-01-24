@@ -1,5 +1,6 @@
-:root{
-  --color-white-smoke:#eee;
+:root {
+  --color-white-smoke: #eee;
+  --color-white: #ffff;
 }
 *,
 *::after,
@@ -14,31 +15,72 @@ html {
 }
 
 .flex-container {
-  background-color: rgba(0, 0, 256, 0.9);
-  min-height: 15rem;
-  display: flex;
-  /* Sets the direction in which the container want to stack the flex item
-  Column means one on top of another 
-  flex-direction: column; For this first example i'll leave it to the default value:row*/
-  /* This property specifies that the flex items should wrap if there is no 
-  more space */
-  /* flex-flow is the shorthand for flex-direction and flex-wrap */
-  flex-wrap: wrap;
-  /* This property is used to set items' allignment on the x axis */
-  justify-content: center;
-  /* This one is used to allign items on the y axis */
-  align-items: center;
-}
-
-.flex-item {
-  padding: 1rem 3rem;
-  font-size: 4rem;
   background-color: var(--color-white-smoke);
-  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
 }
 
-.item-2 {
+.flex-container > * {
+  background-color: var(--color-white);
+  margin-bottom: 0.25rem;
+  padding: 2rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.hero {
+  display: flex;
+  padding: 0;
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero--aside {
+    margin-bottom: 0.25rem;
+  }
+
+  .hero--main {
+    margin: 0;
+  }
+
+  .features > * {
+    flex-wrap: wrap;
+  }
+}
+.hero > * {
+  padding: 5rem;
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+.hero--main {
   flex-grow: 1;
+  margin-left: 0.25rem;
 }
 
-.item-3{flex-grow:2;}
+.features {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.features > * {
+  background-color: var(--color-white);
+  width: 14rem;
+  height: 17rem;
+}
+
+.fetaure-2 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.fetaure-4 {
+  margin-left: 0.25rem;
+}
