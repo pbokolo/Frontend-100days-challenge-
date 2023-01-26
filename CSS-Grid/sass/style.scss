@@ -13,7 +13,7 @@ html {
   font-size: 112.5%;
   box-sizing: border-box;
 }
-// === LECTURES
+// === LECTURES: BASIC
 /* 
 .container {
   background-color: $color-white--smoke;
@@ -80,8 +80,120 @@ html {
 }
  */
 
+// LECTURES: IMPLICIT GRID VS EXPLICIT GRID
+/* .container {
+  margin: 30px auto;
+  background-color: $color-white--smoke;
+  width: 1000px;
+  height: 1000px;
+  display: grid;
+  // grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 100px);
+  gap: 30px;
+  // This will create implicit columns for the remaining items
+  // The dense property will make all items packed
+  grid-auto-flow: row dense;
+  // Styles the implicit rows
+  grid-auto-rows: 80px;
+  // ALIGN GRID ITEMS IN GRID AREAS
+  // Items can be aligned accros to the column axis
+  // The default property is stretch. Others are center, end and start
+  align-items: center;
+  // Same as align-items but accross the row axis
+  //justify-items: end;
+
+  // ALIGN GRID TRACKS TO GRID CONTAINER
+  grid-template-columns: repeat(2, 200px);
+  // Align the tracks accross the row axis(same as in flexbox)
+  justify-content: center;
+  // Align the tracks accross the column axis(same as in flexbox)
+  align-content: center;
+  .item {
+    background-color: orangered;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: $color-white;
+    padding: 20px;
+
+    &--4 {
+      background-color: crimson;
+      grid-row: 2 / span 3;
+    }
+
+    &--7 {
+      background-color: palevioletred;
+      grid-column: 1 / -1;
+    }
+
+    &--6 {
+      background-color: lightcoral;
+      grid-row: 2 / span 2;
+    }
+
+    &--3 {
+      align-self: stretch;
+      justify-self: stretch;
+    }
+  }
+} */
+
+// LECTURE: min-content,max-content and minmax
+.container {
+  margin: 30px auto;
+  background-color: $color-white--smoke;
+  width: 1000px;
+  height: 1000px;
+  display: grid;
+  grid-template-rows: repeat(2, 150px);
+  // Max content sets the column width to the length of its content
+  // Without line break
+  // While min-content sets the column width to the lenght of the largest
+  // Single content and its creates line break
+  // minmax ensures that the width stays in the range
+  grid-template-columns: max-content repeat(2, minmax(150px, min-content)) min-content;
+
+  .item {
+    font-size: 30px;
+    font-family: sans-serif;
+    color: $color-white;
+    padding: 20px;
+
+    &--1 {
+      background-color: orangered;
+    }
+
+    &--2 {
+      background-color: yellowgreen;
+    }
+
+    &--3 {
+      background-color: blueviolet;
+    }
+
+    &--4 {
+      background-color: palevioletred;
+    }
+
+    &--5 {
+      background-color: royalblue;
+    }
+
+    &--6 {
+      background-color: goldenrod;
+    }
+
+    &--7 {
+      background-color: crimson;
+    }
+
+    &--8 {
+      background-color: darkslategrey;
+    }
+  }
+}
+
 // CHALLENGE
-.container > * {
+/* .container > * {
   background-color: red;
   color: white;
 }
@@ -132,3 +244,4 @@ html {
   grid-column: col-start 1 / -1;
   grid-row: footer-start / footer-end;
 }
+ */
