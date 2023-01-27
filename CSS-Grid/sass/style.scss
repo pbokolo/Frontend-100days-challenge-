@@ -138,7 +138,7 @@ html {
 } */
 
 // LECTURE: min-content,max-content and minmax
-.container {
+/* .container {
   margin: 30px auto;
   background-color: $color-white--smoke;
   width: 1000px;
@@ -190,8 +190,67 @@ html {
       background-color: darkslategrey;
     }
   }
-}
+} */
 
+// LECTURE: auto-fit and auto-fill
+.container {
+  margin: 30px auto;
+  background-color: $color-white--smoke;
+  width: 90%;
+  height: 1000px;
+  display: grid;
+  grid-template-rows: repeat(2, minmax(150px, min-content));
+  // Creates 10 columns(1000px-container width-/100px-column width-)
+  grid-template-columns: repeat(auto-fill, 100px);
+
+  // Same as previous but the remaining columns will get collapsed
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  // Max content sets the column width to the length of its content
+  // Without line break
+  // While min-content sets the column width to the lenght of the largest
+  // Single content and its creates line break
+  // minmax ensures that the width stays in the range
+  //grid-template-columns: max-content repeat(2, minmax(150px, min-content)) min-content;
+
+  .item {
+    font-size: 30px;
+    font-family: sans-serif;
+    color: $color-white;
+    padding: 20px;
+
+    &--1 {
+      background-color: orangered;
+    }
+
+    &--2 {
+      background-color: yellowgreen;
+    }
+
+    &--3 {
+      background-color: blueviolet;
+    }
+
+    &--4 {
+      background-color: palevioletred;
+    }
+
+    &--5 {
+      background-color: royalblue;
+    }
+
+    &--6 {
+      background-color: goldenrod;
+    }
+
+    &--7 {
+      background-color: crimson;
+    }
+
+    &--8 {
+      background-color: darkslategrey;
+    }
+  }
+}
 // CHALLENGE
 /* .container > * {
   background-color: red;
